@@ -2,15 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 export async function generateStaticParams() {
-  const baseUrl = "https://api.themoviedb.org/3/";
-
-  const data = await fetch(
-    `${baseUrl}/movie/popular?api_key=${process.env.API_KEY}`
-  );
-  const response = await data.json();
-  return response.results.map((movie) => ({
-    id: toString(movie.id),
-  }));
+  //   const baseUrl = "https://api.themoviedb.org/3/";
+  //   const data = await fetch(
+  //     `${baseUrl}/movie/popular?api_key=${process.env.API_KEY}`
+  //   );
+  //   const response = await data.json();
+  //   return response.results.map((movie) => ({
+  //     id: toString(movie.id),
+  //   }));
 }
 
 export default async function MovieDetail({ params }) {
