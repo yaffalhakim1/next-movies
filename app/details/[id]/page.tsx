@@ -36,6 +36,6 @@ export async function generateStaticParams() {
   );
   const response = await data.json();
   return response.results.map((movie) => ({
-    params: { id: movie.id.toString() },
+    id: { id: movie.id.toString() },
   }));
 }
