@@ -29,7 +29,7 @@ export default async function MovieDetail({ params }) {
   );
 }
 
-export async function getStaticPaths() {
+export async function generateStaticParams() {
   const baseUrl = "https://api.themoviedb.org/3/";
   const data = await fetch(
     `${baseUrl}/movie/popular?api_key=${process.env.API_KEY}`
