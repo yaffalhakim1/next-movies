@@ -35,7 +35,7 @@ export async function generateStaticParams() {
     `${baseUrl}/movie/popular?api_key=${process.env.API_KEY}`
   );
   const response = await data.json();
-  return response.results.map((movie) => ({
+  return response.results.map((movie: { id: { toString: () => any } }) => ({
     id: { id: movie.id.toString() },
   }));
 }
