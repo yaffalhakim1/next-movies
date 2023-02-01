@@ -1,8 +1,5 @@
 import Image from "next/image";
-import { Inter } from "@next/font/google";
 import Movie from "./Movie";
-
-const inter = Inter({ subsets: ["latin"] });
 
 //when u should use "useclient?" when u need to use onclick or onhover or something like that
 
@@ -12,6 +9,7 @@ export default async function Home() {
     `${baseUrl}/movie/popular?api_key=${process.env.API_KEY}`
   );
   const response = await data.json();
+  // console.log(response);
 
   return (
     <>
@@ -23,8 +21,8 @@ export default async function Home() {
               id={movie.id}
               title={movie.title}
               release_date={movie.release_date}
-              // overview={movie.overview}
               poster_path={movie.poster_path}
+              overview={movie.overview}
             />
           </div>
         ))}

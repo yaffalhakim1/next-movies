@@ -28,3 +28,18 @@ export default async function MovieDetail({ params }) {
     </div>
   );
 }
+
+export async function getStaticPaths() {
+  const baseUrl = "https://api.themoviedb.org/3/";
+  const data = await fetch(
+    `${baseUrl}/movie/popular?api_key=${process.env.API_KEY}`
+  );
+  const response = await data.json();
+  const paths = response.results.map((movie) => ({
+    params: { id: movie.id.toString() },
+  }));
+  return {
+    paths,
+    fallback: false,
+  };
+}
