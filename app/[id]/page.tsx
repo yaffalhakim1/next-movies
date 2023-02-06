@@ -19,7 +19,7 @@ export default async function MovieDetail({ params }) {
         height={300}
       />
       <h2>{response.title}</h2>
-      <div className="container bg-green-500 w-1/12">
+      <div className="container bg-green-500">
         <p className="text-center">{response.status}</p>
       </div>
 
